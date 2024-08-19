@@ -10,6 +10,8 @@ const Operator = ({ selectedCountry, mobileNumber }) => {
 
     const { data: mobileData, error: mobileLookupError, loading: mobileLookupLoading } = useSelector((state) => state.mobileNumLookup);
     const { operators, loading: operatorloading } = useSelector((state) => state.operators);
+    const { loading: productLoading } = useSelector((state) => state.products);
+
 
     useEffect(() => {
         if (!mobileLookupLoading && !mobileLookupError && mobileNumber) {
@@ -42,7 +44,7 @@ const Operator = ({ selectedCountry, mobileNumber }) => {
                     </div>
                 </div>
             )}
-            {(operatorloading) && <Loader />}
+            {(operatorloading || productLoading) && <Loader />}
         </div>
     )
 }

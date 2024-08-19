@@ -1,8 +1,8 @@
 import React from "react";
 import { useSelector } from 'react-redux';
-import { Loader } from "../../../components/loading/loading";
+import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 
-const Products = () => {
+const Products = ({ mobileNumber }) => {
 
     const { products: productData, error: productError, loading: productLoading } = useSelector((state) => state.products);
 
@@ -19,17 +19,22 @@ const Products = () => {
 
     return (
         <div className='product-section'>
-            <p className='product-title'>Let's select a top-up</p>
-            <div className='product-container'>
-                <div className="product-list">
-                    {sortedrechargeList.map((items) => (
-                        <div key={items.id} className="product-box">
-                            <p>{items.rechargePriceData}</p>
-                        </div>
-                    ))}
+            <div>
+                <p className="recipient-label">Recipients Details</p>
+                <p className="recipient-num">{mobileNumber}<span className="edit-icon-wrapper"><EditOutlinedIcon className="edit-icon"/></span></p>
+            </div>
+            <div>
+                <p className='product-title'>Let's select a top-up</p>
+                <div className='product-container'>
+                    <div className="product-list">
+                        {sortedrechargeList.map((items) => (
+                            <div key={items.id} className="product-box">
+                                <p>{items.rechargePriceData}</p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
-            {(productLoading) && <Loader />}
         </div>
     )
 }
