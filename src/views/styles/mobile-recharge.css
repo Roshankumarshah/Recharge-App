@@ -74,7 +74,7 @@ p.sub-title {
 .input-section {
     display: flex;
     flex-direction: column;
-    padding: 28px 20px;
+    padding: 28px 20px 0px 20px;
     margin-bottom: 8px;
 }
 
@@ -162,13 +162,14 @@ p.sub-title {
 }
 
 .operators-container {
-    max-height: 275px;
+    max-height: 180px;
     overflow-y: auto;
     margin-top: 18px;
 }
 
 p.operator-title,
 p.product-title {
+    margin-top: 4px;;
     text-align: left;
     color: #004A59;
 }
@@ -204,7 +205,7 @@ p.product-title {
 }
 
 .product-container {
-    max-height: 350px;
+    max-height: 220px;
     overflow-y: auto;
 }
 
