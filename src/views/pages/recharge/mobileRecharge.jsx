@@ -13,9 +13,7 @@ import Products from './product';
 
 const validationSchema = Yup.object({
   selectedCountry: Yup.string().required("Recipient's country is required"),
-  mobileNumber: Yup.string()
-    // .matches(/^\d+$/, 'Mobile number must contain only digits')
-    .required('Mobile number is required'),
+  mobileNumber: Yup.string().required('Mobile number is required'),
 });
 
 const MobileRecharge = () => {
